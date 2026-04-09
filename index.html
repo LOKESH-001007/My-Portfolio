@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lokesh | Portfolio</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@700,600,500&f[]=cabinet-grotesk@800,700,500,400,300&f[]=satoshi@700,500,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="header" id="header">
+  <a href="#home" class="logo">Web<span>Developer</span></a>
+  <nav class="navbar" id="navbar">
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<section class="home" id="home">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="home-container">
+    <div class="home-content">
+      <div class="home-badge">&#x1F44B; Available for Freelance</div>
+      <h3>Hello, It's Me</h3>
+      <h1>Lokesh <span class="name-accent">P</span></h1>
+      <h3 class="typed-line">And I'm a <span class="text"></span></h3>
+      <p>B.E. ECE student passionate about crafting digital experiences.<br/>Full-stack developer skilled in Java, JavaScript &amp; React.</p>
+      <div class="home-loki">
+        <a href="mailto:lokeshparthiban01@gmail.com" title="Email"><i class='bx bxl-gmail'></i></a>
+        <a href="https://www.linkedin.com/in/lokeshparthiban/" target="_blank" title="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://github.com/LOKESH-001007" target="_blank" title="GitHub"><i class='bx bxl-github'></i></a>
+      </div>
+      <div class="cta-row">
+        <a href="#about" class="btn-primary">Explore My Work</a>
+        <a href="#contact" class="btn-ghost">Get In Touch</a>
+      </div>
+    </div>
+    <div class="profile-container">
+      <div class="profile-ring">
+        <img src="lokesh-modified.png" alt="Lokesh P"/>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="profile-about reveal">
+    <img src="cropped_circle_image.png" alt="Lokesh About"/>
+  </div>
+  <div class="about-text reveal">
+    <span class="section-eyebrow">Who am I</span>
+    <h2>About <span>Me</span></h2>
+    <h4>Full Stack Developer</h4>
+    <p>I am pursuing a Bachelor of Engineering in Electronics and Communication Engineering, developing expertise in Java, JavaScript, HTML, CSS, and full-stack development alongside academics. I enjoy building web applications and exploring innovative solutions, aiming to grow as a professional developer contributing to impactful projects.</p>
+    <a href="#services" class="btn-primary">My Services</a>
+  </div>
+</section>
+
+<section id="skills">
+  <span class="section-eyebrow center reveal">What I know</span>
+  <h1 class="sub-title reveal">My <span>Skills</span></h1>
+  <p class="section-desc reveal">Drag &amp; rotate the 3D Dev Universe to explore my skills</p>
+  <div class="skills-3d-container reveal">
+    <canvas id="skills-canvas"></canvas>
+    <div id="skill-labels"></div>
+    <div class="scene-ui">
+      <div class="scene-badge">
+        <div><span>STATUS</span> &nbsp;ACTIVE</div>
+        <div><span>SKILLS</span> &nbsp;7 MODULES</div>
+        <div><span>ORBIT</span> &nbsp;RUNNING</div>
+      </div>
+      <div class="scene-legend">
+        <div class="leg-item" style="color:#e44d26"><div class="leg-dot" style="background:#e44d26"></div>HTML5</div>
+        <div class="leg-item" style="color:#1572b6"><div class="leg-dot" style="background:#1572b6"></div>CSS3</div>
+        <div class="leg-item" style="color:#f7df1e"><div class="leg-dot" style="background:#f7df1e"></div>JavaScript</div>
+        <div class="leg-item" style="color:#61dafb"><div class="leg-dot" style="background:#61dafb"></div>React</div>
+        <div class="leg-item" style="color:#ff8c00"><div class="leg-dot" style="background:#ff8c00"></div>Java Core</div>
+        <div class="leg-item" style="color:#b44fdb"><div class="leg-dot" style="background:#b44fdb"></div>Java Adv</div>
+        <div class="leg-item" style="color:#00b4d8"><div class="leg-dot" style="background:#00b4d8"></div>MySQL</div>
+      </div>
+      <div class="drag-hint"><i class='bx bx-rotate-right'></i>&nbsp;Drag to rotate · Scroll to zoom</div>
+    </div>
+  </div>
+  <div class="skills-bars reveal">
+    <div class="bar">
+      <div class="bar-head"><i class='bx bxl-html5' style="color:#e44d26"></i><span>HTML5</span><em>90%</em></div>
+      <div class="progress-track"><div class="progress-fill" style="--w:90%;--c:#e44d26"></div></div>
+    </div>
+    <div class="bar">
+      <div class="bar-head"><i class='bx bxl-css3' style="color:#1572b6"></i><span>CSS3</span><em>75%</em></div>
+      <div class="progress-track"><div class="progress-fill" style="--w:75%;--c:#1572b6"></div></div>
+    </div>
+    <div class="bar">
+      <div class="bar-head"><i class='bx bxl-javascript' style="color:#f7df1e"></i><span>JavaScript</span><em>85%</em></div>
+      <div class="progress-track"><div class="progress-fill" style="--w:85%;--c:#f7df1e"></div></div>
+    </div>
+    <div class="bar">
+      <div class="bar-head"><i class='bx bxl-react' style="color:#61dafb"></i><span>React JS</span><em>75%</em></div>
+      <div class="progress-track"><div class="progress-fill" style="--w:75%;--c:#61dafb"></div></div>
+    </div>
+    <div class="bar">
+      <div class="bar-head"><i class='bx bxl-java' style="color:#ff8c00"></i><span>Java Core</span><em>65%</em></div>
+      <div class="progress-track"><div class="progress-fill" style="--w:65%;--c:#ff8c00"></div></div>
+    </div>
+    <div class="bar">
+      <div class="bar-head"><i class='bx bxl-java' style="color:#b44fdb"></i><span>Java Advanced</span><em>55%</em></div>
+      <div class="progress-track"><div class="progress-fill" style="--w:55%;--c:#b44fdb"></div></div>
+    </div>
+    <div class="bar">
+      <div class="bar-head"><i class='bx bx-data' style="color:#00b4d8"></i><span>MySQL</span><em>70%</em></div>
+      <div class="progress-track"><div class="progress-fill" style="--w:70%;--c:#00b4d8"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <span class="section-eyebrow center reveal">What I offer</span>
+  <h1 class="sub-title reveal">My <span>Services</span></h1>
+  <div class="service-list">
+    <div class="reveal">
+      <i class='bx bx-code'></i>
+      <h2>Website Development</h2>
+      <p>Responsive, modern websites using HTML, CSS, JavaScript, and frameworks.</p>
+      <a href="#" class="read">Learn more</a>
+    </div>
+    <div class="reveal">
+      <i class='bx bxs-crop'></i>
+      <h2>UI/UX Design</h2>
+      <p>Clean, intuitive interfaces focused on experience and accessibility.</p>
+      <a href="#" class="read">Learn more</a>
+    </div>
+    <div class="reveal">
+      <i class='bx bxl-android'></i>
+      <h2>App Design</h2>
+      <p>Mockups and wireframes for Android and iOS using modern design tools.</p>
+      <a href="#" class="read">Learn more</a>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="main-text">
+    <span class="section-eyebrow center reveal">My work</span>
+    <h2 class="reveal">Latest <span>Projects</span></h2>
+    <div class="portfolio-content">
+      <div class="row reveal">
+        <img src="uiux.jpeg" alt="UI/UX Design"/>
+        <div class="layer">
+          <h5>UI/UX Design</h5>
+          <p>Intuitive interfaces that improve user experience and engagement through research-driven design.</p>
+          <a href="#"><i class='bx bx-link-external'></i></a>
+        </div>
+      </div>
+      <div class="row reveal">
+        <img src="web.jpeg" alt="Website Design"/>
+        <div class="layer">
+          <h5>Website Design</h5>
+          <p>Modern, responsive websites tailored to user needs with clean, maintainable code.</p>
+          <a href="#"><i class='bx bx-link-external'></i></a>
+        </div>
+      </div>
+      <div class="row reveal">
+        <img src="app.jpeg" alt="App Design"/>
+        <div class="layer">
+          <h5>App Design</h5>
+          <p>App mockups and wireframes for Android and iOS with a mobile-first approach.</p>
+          <a href="#"><i class='bx bx-link-external'></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-text reveal">
+    <span class="section-eyebrow">Say hello</span>
+    <h2>Contact <span>Me</span></h2>
+    <h4>Let's Work Together</h4>
+    <p>Have an idea or project? Let's collaborate and bring it to life!</p>
+    <ul class="contact-list">
+      <li><i class='bx bxs-send'></i> lokeshparthiban01@gmail.com</li>
+      <li><i class='bx bxs-phone'></i> +91 93458 94255</li>
+    </ul>
+    <div class="contact-icon">
+      <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+      <a href="#"><i class='bx bxl-twitter'></i></a>
+      <a href="#"><i class='bx bxl-instagram'></i></a>
+      <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+    </div>
+  </div>
+  <div class="contact-form reveal">
+    <form onsubmit="handleSubmit(event)">
+      <input type="text" placeholder="Your Name" required/>
+      <input type="email" placeholder="Your Email" required/>
+      <input type="text" placeholder="Subject"/>
+      <textarea rows="8" placeholder="Your Message" required></textarea>
+      <input type="submit" value="Send Message &#x2192;" class="send"/>
+    </form>
+  </div>
+</section>
+
+<footer class="last-text">
+  <p>Crafted with &#x2764;&#xFE0F; by <span>Lokesh</span> &copy; 2025</p>
+</footer>
+
+<a href="#home" class="top" id="topBtn"><i class='bx bx-up-arrow-alt'></i></a>
+
+<script src="script.js"></script>
+</body>
+</html>
