@@ -77,6 +77,7 @@ function handleSubmit(event) {
   const url = `https://wa.me/919345894255?text=${encodeURIComponent(text)}`;
 
   window.open(url, '_blank');
+   window.location.href = url;
 }
 
 /* ════════════════════════════════════════
