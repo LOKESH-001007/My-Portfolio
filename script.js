@@ -64,12 +64,19 @@ window.addEventListener('scroll', function () {
 });
 
 // Contact Form
-function handleSubmit(e) {
-  e.preventDefault();
-  var btn = e.target.querySelector('.send');
-  btn.value = 'Message Sent! ✓';
-  btn.style.background = 'linear-gradient(135deg,#10b981,#059669)';
-  setTimeout(function () { btn.value = 'Send Message →'; btn.style.background = ''; e.target.reset(); }, 3000);
+function handleSubmit(event) {
+  event.preventDefault(); // stops page from reloading
+
+  const name    = document.getElementById('name').value;
+  const email   = document.getElementById('email').value;
+  const subject = document.getElementById('subject').value;
+  const message = document.getElementById('message').value;
+
+  const text = `👋 Hello Lokesh!\n\n*Name:* ${name}\n*Email:* ${email}\n*Subject:* ${subject}\n\n*Message:*\n${message}`;
+
+  const url = `https://wa.me/919345894255?text=${encodeURIComponent(text)}`;
+
+  window.open(url, '_blank');
 }
 
 /* ════════════════════════════════════════
