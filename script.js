@@ -4,7 +4,7 @@
 
 // Typed.js
 var typed = new Typed('.text', {
-  strings: ['Frontend Developer','Web Developer','Full Stack Developer','UI/UX Enthusiast'],
+  strings: ['Full Stack Developer','UI/UX Enthusiast'],
   typeSpeed: 75, backSpeed: 50, backDelay: 1500, loop: true
 });
 
