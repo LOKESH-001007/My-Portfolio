@@ -1,38 +1,45 @@
-# 🌐 Lokesh P — Personal Portfolio
+# 🌐 Personal Portfolio Website
 
-> A responsive, animated portfolio website built to showcase my skills, projects, and freelance services as a Full Stack Developer.
+A fully responsive personal portfolio website showcasing skills, projects, and contact information — featuring an interactive 3D skills globe and a WhatsApp-integrated contact form.
 
-🔗 **Live Site:** [lokesh-001007.github.io/My-Portfolio](https://lokesh-001007.github.io/My-Portfolio/)
-
----
-
-## 👨‍💻 About
-
-I'm **Lokesh P**, a Full Stack Developer and Electronics & Communication Engineering undergrad. I build end-to-end web experiences — from pixel-perfect React UIs to robust Java backends, SQL databases, and AI-powered features.
+🔗 **Live Demo:** [lokesh-001007.github.io/My-Portfolio](https://lokesh-001007.github.io/My-Portfolio/)
 
 ---
 
-## ✨ Features
+## 🚀 Features
 
-- **Animated hero section** with dynamic role text
-- **Interactive 3D skills globe** — drag and rotate to explore tech stack
-- **Projects showcase** with live links
-- **Services & Pricing** section for freelance clients
-- **Contact form** with WhatsApp integration
-- **Fully responsive** — mobile-first design
-- **SEO optimized** with meta tags and Open Graph support
+- Fully responsive design — works on all devices
+- 3D interactive skills globe animation
+- Projects showcase section
+- WhatsApp-integrated contact form
+- Smooth scroll animations
+- Clean and modern UI
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer | Technologies |
-|-------|-------------|
-| Frontend | HTML5, CSS3, JavaScript |
-| Framework | React JS |
-| Backend | Java (Core & Advanced) |
-| Database | MySQL |
-| Deployment | GitHub Pages |
+- **Frontend:** HTML5, CSS3, JavaScript
+- **3D Globe:** JavaScript (TagCanvas / Globe library)
+- **Contact:** WhatsApp API integration
+- **Hosting:** GitHub Pages
+
+---
+
+## 📁 Project Structure
+
+```
+My-Portfolio/
+├── index.html          # Main entry point
+├── css/                 # Stylesheets
+│   └── style.css
+├── js/                   # Scripts (globe animation, form logic, etc.)
+│   └── script.js
+├── assets/               # Images, icons, fonts
+└── README.md
+```
+
+> ✏️ Update this tree if your actual folder layout differs.
 
 ---
 
@@ -41,7 +48,7 @@ I'm **Lokesh P**, a Full Stack Developer and Electronics & Communication Enginee
 | Project | Description | Link |
 |---------|-------------|------|
 | **Gym Website** | Responsive gym site with interactive UI, services, and pricing sections | [Live →](https://lokesh-001007.github.io/Gym-Web/) |
-| **Course Management Portal** | Full-stack Java app with role-based access, deployed via Docker & Railway | [Live →](https://course-management-portal-production.up.railway.app) |
+| **Course Management Portal** | Full-stack Java app with role-based access, deployed via Docker & Railway | [Live →](https://course.lokesh-dev.in) |
 
 ---
 
