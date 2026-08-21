@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Annamalai Wood Works — Case Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0714; --surface:#150f22; --surface-2:#1c1430; --border:#2a2140;
+    --text:#f3f0fa; --muted:#948fa8; --violet:#8b5cf6; --pink:#ec4899;
+    --cyan:#38bdf8; --green:#34d399; --amber:#fbbf24;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--text); font-family:'Inter',sans-serif;}
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif; font-weight:700; margin:0;}
+  .grad{background:linear-gradient(90deg,var(--violet),var(--pink)); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .wrap{max-width:980px; margin:0 auto; padding:0 1.5rem;}
+  a{color:inherit;}
+
+  .backnav{padding:1.6rem 0 0;}
+  .backlink{display:inline-flex; align-items:center; gap:0.4rem; font-size:0.85rem; color:var(--muted); text-decoration:none;}
+  .backlink:hover{color:var(--text);}
+
+  .hero{padding:3rem 0 2.5rem; border-bottom:1px solid var(--border);}
+  .status{display:inline-flex; align-items:center; gap:0.5rem; font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:var(--green); border:1px solid var(--border); background:var(--surface); padding:0.35rem 0.8rem; border-radius:20px; margin-bottom:1.2rem;}
+  .dot{width:6px; height:6px; border-radius:50%; background:var(--green); animation:pulse 2s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,211,153,.5);} 70%{box-shadow:0 0 0 8px rgba(52,211,153,0);} 100%{box-shadow:0 0 0 0 rgba(52,211,153,0);}}
+  .hero h1{font-size:clamp(2rem,4.6vw,3rem); line-height:1.1; margin-bottom:0.9rem;}
+  .hero .tagline{font-size:1.05rem; color:var(--muted); max-width:60ch; line-height:1.6; margin-bottom:1.8rem;}
+  .cta-row{display:flex; flex-wrap:wrap; gap:0.8rem;}
+  .btn{display:inline-flex; align-items:center; gap:0.5rem; font-size:0.88rem; font-weight:600; padding:0.75rem 1.3rem; border-radius:10px; text-decoration:none; border:1px solid transparent;}
+  .btn-primary{background:linear-gradient(90deg,var(--violet),var(--pink)); color:#fff;}
+  .btn-ghost{background:var(--surface); border-color:var(--border); color:var(--text);}
+  .btn-ghost:hover{border-color:var(--violet);}
+
+  .facts{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:14px; overflow:hidden; margin-top:2.4rem;}
+  .fact{background:var(--surface); padding:1.1rem 1.2rem;}
+  .fact .label{font-family:'JetBrains Mono',monospace; font-size:0.65rem; letter-spacing:0.08em; color:var(--muted); text-transform:uppercase; margin-bottom:0.4rem;}
+  .fact .value{font-size:0.92rem; font-weight:600;}
+
+  section.block{padding:3.2rem 0;}
+  section.block.bordered{border-top:1px solid var(--border);}
+  .eyebrow-sm{font-family:'JetBrains Mono',monospace; font-size:0.72rem; letter-spacing:0.1em; color:var(--cyan); text-transform:uppercase; margin-bottom:0.7rem;}
+  .h-block{font-size:1.7rem; margin-bottom:1rem;}
+  .p-block{color:var(--muted); font-size:0.95rem; line-height:1.7; max-width:72ch;}
+
+  .ps-grid{display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1.6rem;}
+  .ps-card{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.4rem 1.5rem;}
+  .ps-card.problem{border-left:3px solid #f87171;}
+  .ps-card.solution{border-left:3px solid var(--green);}
+  .ps-tag{font-family:'JetBrains Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; margin-bottom:0.6rem; display:block;}
+  .problem .ps-tag{color:#f87171;} .solution .ps-tag{color:var(--green);}
+  .ps-card p{font-size:0.88rem; color:var(--muted); line-height:1.6; margin:0;}
+
+  .feat-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.8rem;}
+  .feat{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.3rem;}
+  .feat .icon{width:34px; height:34px; border-radius:9px; background:var(--surface-2); display:flex; align-items:center; justify-content:center; margin-bottom:0.9rem; font-size:1rem;}
+  .feat h4{font-family:'Space Grotesk',sans-serif; font-size:0.95rem; margin-bottom:0.4rem;}
+  .feat p{font-size:0.82rem; color:var(--muted); line-height:1.55; margin:0;}
+
+  .flow{display:flex; align-items:center; gap:0.5rem; margin-top:2rem; overflow-x:auto; padding-bottom:0.5rem;}
+  .flow-step{flex-shrink:0; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1rem 1.2rem; text-align:center; min-width:130px;}
+  .flow-step .fs-icon{font-size:1.3rem; margin-bottom:0.5rem;}
+  .flow-step .fs-label{font-size:0.78rem; font-weight:600;}
+  .flow-step .fs-sub{font-family:'JetBrains Mono',monospace; font-size:0.63rem; color:var(--muted); margin-top:0.2rem;}
+  .flow-arrow{flex-shrink:0; color:var(--muted); font-size:1.1rem;}
+
+  .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.8rem;}
+  .screen{background:#0e0a1a; border:1px solid var(--border); border-radius:12px; overflow:hidden;}
+  .screen-top{display:flex; gap:5px; padding:0.5rem 0.7rem; background:var(--surface-2); border-bottom:1px solid var(--border);}
+  .sd{width:7px;height:7px;border-radius:50%;} .sd.r{background:#ef4444;} .sd.y{background:#eab308;} .sd.g{background:#22c55e;}
+  .screen-body{padding:1.1rem; min-height:150px; display:flex; align-items:center; justify-content:center;}
+  .screen-label{padding:0.7rem 1rem 1rem; font-size:0.78rem; font-weight:600;}
+  .products{display:grid; grid-template-columns:repeat(2,1fr); gap:0.5rem; width:100%;}
+  .product{background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:0.5rem;}
+  .swatch{height:32px; border-radius:6px; margin-bottom:0.35rem; background:linear-gradient(135deg,#7c5cff33,#ec489933);}
+  .product .price{font-family:'JetBrains Mono',monospace; font-size:0.62rem; color:var(--cyan);}
+  .cart-mock{width:100%; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:0.9rem; font-size:0.68rem;}
+  .cart-row{display:flex; justify-content:space-between; padding:0.4rem 0; border-bottom:1px solid var(--border); color:var(--muted);}
+  .cart-row:last-child{border:none; color:var(--text); font-weight:600;}
+  .pay-btn{margin-top:0.6rem; background:linear-gradient(90deg,var(--violet),var(--pink)); border-radius:6px; height:24px; font-size:0.62rem; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:600;}
+  .admin-mock{width:100%; font-size:0.62rem;}
+  .admin-row{display:flex; justify-content:space-between; padding:0.35rem 0; border-bottom:1px solid var(--border); color:var(--muted);}
+  .admin-row td:first-child{color:var(--text);}
+  .status-pill{font-size:0.55rem; padding:0.15rem 0.4rem; border-radius:5px; background:rgba(52,211,153,0.15); color:var(--green);}
+
+  .chal-list{display:flex; flex-direction:column; gap:1rem; margin-top:1.8rem;}
+  .chal{display:flex; gap:1rem; background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.2rem 1.4rem;}
+  .chal .num{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.4rem; color:var(--border); flex-shrink:0; width:2.2rem;}
+  .chal h4{font-size:0.95rem; margin-bottom:0.4rem;}
+  .chal p{font-size:0.85rem; color:var(--muted); line-height:1.6; margin:0;}
+  .chal .fix{display:inline-block; margin-top:0.6rem; font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:var(--cyan);}
+
+  .stats-strip{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:14px; overflow:hidden; margin-top:1rem;}
+  .stat{background:var(--surface); padding:1.5rem 1rem; text-align:center;}
+  .stat .n{font-family:'Space Grotesk',sans-serif; font-size:1.9rem; font-weight:700;}
+  .stat .l{font-size:0.72rem; color:var(--muted); margin-top:0.3rem;}
+
+  .stack-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:0.7rem; margin-top:1.6rem;}
+  .stack-item{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:0.9rem; text-align:center; font-family:'JetBrains Mono',monospace; font-size:0.75rem;}
+
+  .foot-nav{display:flex; justify-content:space-between; align-items:center; padding:2.5rem 0 4rem; border-top:1px solid var(--border); margin-top:1rem;}
+  .foot-link{font-size:0.85rem; color:var(--muted); text-decoration:none; display:flex; align-items:center; gap:0.4rem;}
+  .foot-link:hover{color:var(--text);}
+  .foot-link.next{color:var(--text); font-weight:600;}
+
+  @media(max-width:820px){
+    .facts, .stats-strip{grid-template-columns:repeat(2,1fr);}
+    .feat-grid, .gallery, .stack-grid{grid-template-columns:1fr 1fr;}
+    .ps-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="backnav"><a class="backlink" href="index.html#projects">← Back to all projects</a></div>
+
+  <div class="hero">
+    <div class="status"><span class="dot"></span>LIVE — selling to real customers</div>
+    <h1>Sri Annamalai Wood Works — <span class="grad">E-Commerce</span></h1>
+    <p class="tagline">A fully functional online store built for a real furniture business in Salem — product catalog, cart, secure payments, and order management, replacing a business that previously ran entirely on walk-ins and word of mouth.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://sriannamalaiwoodworks.in" target="_blank" rel="noopener">🔗 View Live Site</a>
+      <a class="btn btn-ghost" href="index.html#contact">💬 Discuss a similar project</a>
+    </div>
+    <div class="facts">
+      <div class="fact"><div class="label">Role</div><div class="value">Freelance Developer</div></div>
+      <div class="fact"><div class="label">Duration</div><div class="value">~2 weeks</div></div>
+      <div class="fact"><div class="label">Type</div><div class="value">Client E-Commerce</div></div>
+      <div class="fact"><div class="label">Status</div><div class="value">Live &amp; Selling</div></div>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="eyebrow-sm">Overview</div>
+    <h2 class="h-block">What this project is</h2>
+    <p class="p-block">Sri Annamalai Wood Works is a family-run furniture business in Salem. Before this project, they had no online presence at all — no way for customers to browse products, check prices, or place an order outside of visiting the shop in person. I built them a full WooCommerce store on WordPress, integrated with Razorpay for payments, so they could start taking orders online from day one.</p>
+  </section>
+
+  <section class="block bordered">
+    <div class="eyebrow-sm">The Challenge</div>
+    <h2 class="h-block">Going from zero online presence to a working store</h2>
+    <div class="ps-grid">
+      <div class="ps-card problem">
+        <span class="ps-tag">THE PROBLEM</span>
+        <p>The client had never sold online before and had no digital catalog of their products at all — every sale depended on someone physically walking into the shop. They also needed something they could manage themselves after launch, without calling a developer for every price change.</p>
+      </div>
+      <div class="ps-card solution">
+        <span class="ps-tag">THE SOLUTION</span>
+        <p>WordPress + WooCommerce gave the client a familiar admin dashboard to manage products and orders themselves, while Razorpay handled secure payment processing. I customized the storefront design and trained the client on day-to-day store management before handover.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block bordered">
+    <div class="eyebrow-sm">Features</div>
+    <h2 class="h-block">What it does</h2>
+    <div class="feat-grid">
+      <div class="feat"><div class="icon">🛋️</div><h4>Product catalog</h4><p>Full furniture catalog with categories, images, and pricing, easy for the client to update without touching code.</p></div>
+      <div class="feat"><div class="icon">🛒</div><h4>Cart &amp; checkout</h4><p>Standard WooCommerce cart flow with shipping details and order confirmation, tuned for mobile.</p></div>
+      <div class="feat"><div class="icon">💳</div><h4>Razorpay payments</h4><p>Secure online payment gateway integrated directly into checkout, live-tested before launch.</p></div>
+      <div class="feat"><div class="icon">📦</div><h4>Order management</h4><p>Client-facing admin panel to view, process, and update order status without developer involvement.</p></div>
+      <div class="feat"><div class="icon">📱</div><h4>Fully responsive</h4><p>Clean, consistent layout across mobile, tablet, and desktop — most of their traffic comes from phones.</p></div>
+      <div class="feat"><div class="icon">🔍</div><h4>Basic SEO setup</h4><p>Meta titles, descriptions, and structured product data so the store shows up in local search.</p></div>
+    </div>
+  </section>
+
+  <section class="block bordered">
+    <div class="eyebrow-sm">Architecture</div>
+    <h2 class="h-block">How an order flows</h2>
+    <p class="p-block">Built on WordPress rather than a custom backend — the right call here, since the client needed a self-manageable store, not a bespoke system.</p>
+    <div class="flow">
+      <div class="flow-step"><div class="fs-icon">🌐</div><div class="fs-label">Visitor</div><div class="fs-sub">storefront</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="fs-icon">🛍️</div><div class="fs-label">WooCommerce</div><div class="fs-sub">catalog + cart</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="fs-icon">💳</div><div class="fs-label">Razorpay</div><div class="fs-sub">payment gateway</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="fs-icon">✅</div><div class="fs-label">Order confirmed</div><div class="fs-sub">email + admin</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="fs-icon">📋</div><div class="fs-label">WP Admin</div><div class="fs-sub">client manages</div></div>
+    </div>
+  </section>
+
+  <section class="block bordered">
+    <div class="eyebrow-sm">A closer look</div>
+    <h2 class="h-block">Screens</h2>
+    <div class="gallery">
+      <div class="screen">
+        <div class="screen-top"><span class="sd r"></span><span class="sd y"></span><span class="sd g"></span></div>
+        <div class="screen-body">
+          <div class="products">
+            <div class="product"><div class="swatch"></div><div class="price">₹4,200</div></div>
+            <div class="product"><div class="swatch"></div><div class="price">₹6,800</div></div>
+            <div class="product"><div class="swatch"></div><div class="price">₹3,150</div></div>
+            <div class="product"><div class="swatch"></div><div class="price">₹9,400</div></div>
+          </div>
+        </div>
+        <div class="screen-label">Product catalog</div>
+      </div>
+      <div class="screen">
+        <div class="screen-top"><span class="sd r"></span><span class="sd y"></span><span class="sd g"></span></div>
+        <div class="screen-body">
+          <div class="cart-mock">
+            <div class="cart-row"><span>Teak Coffee Table</span><span>₹6,800</span></div>
+            <div class="cart-row"><span>Cushion Set</span><span>₹1,200</span></div>
+            <div class="cart-row"><span>Total</span><span>₹8,000</span></div>
+            <div class="pay-btn">Pay with Razorpay</div>
+          </div>
+        </div>
+        <div class="screen-label">Cart &amp; checkout</div>
+      </div>
+      <div class="screen">
+        <div class="screen-top"><span class="sd r"></span><span class="sd y"></span><span class="sd g"></span></div>
+        <div class="screen-body">
+          <table class="admin-mock" style="width:100%;">
+            <tr class="admin-row"><td>#1042</td><td><span class="status-pill">Shipped</span></td></tr>
+            <tr class="admin-row"><td>#1043</td><td><span class="status-pill">Processing</span></td></tr>
+            <tr class="admin-row"><td>#1044</td><td><span class="status-pill">Delivered</span></td></tr>
+          </table>
+        </div>
+        <div class="screen-label">Order management</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block bordered">
+    <div class="eyebrow-sm">Challenges &amp; Learnings</div>
+    <h2 class="h-block">What actually came up, and how I handled it</h2>
+    <div class="chal-list">
+      <div class="chal">
+        <div class="num">01</div>
+        <div>
+          <h4>Large product images were slowing the site down</h4>
+          <p>The client's original product photos were straight off a phone camera — several megabytes each, which made the catalog page painfully slow to load on mobile.</p>
+          <span class="fix">→ Fixed by compressing and resizing every product image and enabling WordPress lazy-loading, cutting load time significantly.</span>
+        </div>
+      </div>
+      <div class="chal">
+        <div class="num">02</div>
+        <div>
+          <h4>Client had never managed a website before</h4>
+          <p>Handing over "an admin panel" isn't enough if the client doesn't know how to use it — the real risk was the site going stale within a month of launch.</p>
+          <span class="fix">→ Solved with a short hands-on training session covering adding products, updating prices, and processing orders, so the client is fully self-sufficient.</span>
+        </div>
+      </div>
+      <div class="chal">
+        <div class="num">03</div>
+        <div>
+          <h4>Payment gateway test-mode vs live-mode confusion</h4>
+          <p>Razorpay's test and live API keys look nearly identical, and it's an easy mistake to launch a store still pointed at test mode — meaning real customers couldn't actually pay.</p>
+          <span class="fix">→ Ran a full end-to-end real payment test before handover to confirm live mode was correctly configured.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block bordered">
+    <div class="eyebrow-sm">By the numbers</div>
+    <div class="stats-strip">
+      <div class="stat"><div class="n">20+</div><div class="l">Products cataloged</div></div>
+      <div class="stat"><div class="n">100%</div><div class="l">Mobile responsive</div></div>
+      <div class="stat"><div class="n">1</div><div class="l">Client fully trained</div></div>
+      <div class="stat"><div class="n">0→1</div><div class="l">Online presence built</div></div>
+    </div>
+  </section>
+
+  <section class="block bordered">
+    <div class="eyebrow-sm">Tech Stack</div>
+    <h2 class="h-block">Built with</h2>
+    <div class="stack-grid">
+      <div class="stack-item">WordPress</div>
+      <div class="stack-item">WooCommerce</div>
+      <div class="stack-item">Razorpay</div>
+      <div class="stack-item">Custom CSS</div>
+    </div>
+  </section>
+
+  <div class="foot-nav">
+    <a class="foot-link" href="index.html#projects">← Back to all projects</a>
+    <a class="foot-link next" href="nova-fashion-case-study.html">Next project: Nova Fashion Academy →</a>
+  </div>
+</div>
+</body>
+</html>
