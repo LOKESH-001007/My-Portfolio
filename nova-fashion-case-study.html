@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova Fashion Academy — Case Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0714; --surface:#150f22; --surface-2:#1c1430; --border:#2a2140;
+    --text:#f3f0fa; --muted:#948fa8; --violet:#8b5cf6; --pink:#ec4899;
+    --cyan:#38bdf8; --green:#34d399; --amber:#fbbf24;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--text); font-family:'Inter',sans-serif;}
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif; font-weight:700; margin:0;}
+  .grad{background:linear-gradient(90deg,var(--violet),var(--pink)); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .wrap{max-width:980px; margin:0 auto; padding:0 1.5rem;}
+  a{color:inherit;}
+
+  .backnav{padding:1.6rem 0 0;}
+  .backlink{display:inline-flex; align-items:center; gap:0.4rem; font-size:0.85rem; color:var(--muted); text-decoration:none;}
+  .backlink:hover{color:var(--text);}
+
+  .hero{padding:3rem 0 2.5rem; border-bottom:1px solid var(--border);}
+  .status{display:inline-flex; align-items:center; gap:0.5rem; font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:var(--green); border:1px solid var(--border); background:var(--surface); padding:0.35rem 0.8rem; border-radius:20px; margin-bottom:1.2rem;}
+  .dot{width:6px; height:6px; border-radius:50%; background:var(--green); animation:pulse 2s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,211,153,.5);} 70%{box-shadow:0 0 0 8px rgba(52,211,153,0);} 100%{box-shadow:0 0 0 0 rgba(52,211,153,0);}}
+  .hero h1{font-size:clamp(2rem,4.6vw,3rem); line-height:1.1; margin-bottom:0.9rem;}
+  .hero .tagline{font-size:1.05rem; color:var(--muted); max-width:60ch; line-height:1.6; margin-bottom:1.8rem;}
+  .cta-row{display:flex; flex-wrap:wrap; gap:0.8rem;}
+  .btn{display:inline-flex; align-items:center; gap:0.5rem; font-size:0.88rem; font-weight:600; padding:0.75rem 1.3rem; border-radius:10px; text-decoration:none; border:1px solid transparent;}
+  .btn-primary{background:linear-gradient(90deg,var(--violet),var(--pink)); color:#fff;}
+  .btn-ghost{background:var(--surface); border-color:var(--border); color:var(--text);}
+  .btn-ghost:hover{border-color:var(--violet);}
+
+  .facts{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:14px; overflow:hidden; margin-top:2.4rem;}
+  .fact{background:var(--surface); padding:1.1rem 1.2rem;}
+  .fact .label{font-family:'JetBrains Mono',monospace; font-size:0.65rem; letter-spacing:0.08em; color:var(--muted); text-transform:uppercase; margin-bottom:0.4rem;}
+  .fact .value{font-size:0.92rem; font-weight:600;}
+
+  section.block{padding:3.2rem 0;}
+  section.block.bordered{border-top:1px solid var(--border);}
+  .eyebrow-sm{font-family:'JetBrains Mono',monospace; font-size:0.72rem; letter-spacing:0.1em; color:var(--cyan); text-transform:uppercase; margin-bottom:0.7rem;}
+  .h-block{font-size:1.7rem; margin-bottom:1rem;}
+  .p-block{color:var(--muted); font-size:0.95rem; line-height:1.7; max-width:72ch;}
+
+  .ps-grid{display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1.6rem;}
+  .ps-card{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.4rem 1.5rem;}
+  .ps-card.problem{border-left:3px solid #f87171;}
+  .ps-card.solution{border-left:3px solid var(--green);}
+  .ps-tag{font-family:'JetBrains Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; margin-bottom:0.6rem; display:block;}
+  .problem .ps-tag{color:#f87171;} .solution .ps-tag{color:var(--green);}
+  .ps-card p{font-size:0.88rem; color:var(--muted); line-height:1.6; margin:0;}
+
+  .feat-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.8rem;}
+  .feat{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.3rem;}
+  .feat .icon{width:34px; height:34px; border-radius:9px; background:var(--surface-2); display:flex; align-items:center; justify-content:center; margin-bottom:0.9rem; font-size:1rem;}
+  .feat h4{font-family:'Space Grotesk',sans-serif; font-size:0.95rem; margin-bottom:0.4rem;}
+  .feat p{font-size:0.82rem; color:var(--muted); line-height:1.55; margin:0;}
+
+  .flow{display:flex; align-items:center; gap:0.5rem; margin-top:2rem; overflow-x:auto; padding-bottom:0.5rem;}
+  .flow-step{flex-shrink:0; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1rem 1.2rem; text-align:center; min-width:130px;}
+  .flow-step .fs-icon{font-size:1.3rem; margin-bottom:0.5rem;}
+  .flow-step .fs-label{font-size:0.78rem; font-weight:600;}
+  .flow-step .fs-sub{font-family:'JetBrains Mono',monospace; font-size:0.63rem; color:var(--muted); margin-top:0.2rem;}
+  .flow-arrow{flex-shrink:0; color:var(--muted); font-size:1.1rem;}
+
+  .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.8rem;}
+  .screen{background:#0e0a1a; border:1px solid var(--border); border-radius:12px; overflow:hidden;}
+  .screen-top{display:flex; gap:5px; padding:0.5rem 0.7rem; background:var(--surface-2); border-bottom:1px solid var(--border);}
+  .sd{width:7px;height:7px;border-radius:50%;} .sd.r{background:#ef4444;} .sd.y{background:#eab308;} .sd.g{background:#22c55e;}
+  .screen-body{padding:1.1rem; min-height:150px; display:flex; align-items:center; justify-content:center;}
+  .screen-label{padding:0.7rem 1rem 1rem; font-size:0.78rem; font-weight:600;}
+  .hero-mock{width:100%; text-align:center;}
+  .hero-mock .logo{font-family:'Space Grotesk',sans-serif; font-size:1.1rem; font-weight:700; margin-bottom:0.5rem;}
+  .hero-mock .line{height:8px; border-radius:4px; background:var(--surface-2); margin:0 auto 6px; }
+  .hero-mock .line.w1{width:70%;} .hero-mock .line.w2{width:50%;}
+  .hero-mock .cta{margin:10px auto 0; width:100px; height:22px; border-radius:20px; background:linear-gradient(90deg,var(--violet),var(--pink)); font-size:0.6rem; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:600;}
+  .gal-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:0.4rem; width:100%;}
+  .gal-cell{aspect-ratio:1; border-radius:6px; background:linear-gradient(135deg,#7c5cff33,#ec489933);}
+  .contact-mock{width:100%; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:0.8rem;}
+  .cf-field{height:16px; border-radius:5px; background:var(--surface-2); margin-bottom:6px;}
+  .cf-field.tall{height:34px;}
+  .cf-btn{margin-top:4px; background:linear-gradient(90deg,var(--violet),var(--pink)); border-radius:6px; height:20px; font-size:0.58rem; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:600;}
+
+  .chal-list{display:flex; flex-direction:column; gap:1rem; margin-top:1.8rem;}
+  .chal{display:flex; gap:1rem; background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.2rem 1.4rem;}
+  .chal .num{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.4rem; color:var(--border); flex-shrink:0; width:2.2rem;}
+  .chal h4{font-size:0.95rem; margin-bottom:0.4rem;}
+  .chal p{font-size:0.85rem; color:var(--muted); line-height:1.6; margin:0;}
+  .chal .fix{display:inline-block; margin-top:0.6rem; font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:var(--cyan);}
+
+  .stats-strip{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:14px; overflow:hidden; margin-top:1rem;}
+  .stat{background:var(--surface); padding:1.5rem 1rem; text-align:center;}
+  .stat .n{font-family:'Space Grotesk',sans-serif; font-size:1.9rem; font-weight:700;}
+  .stat .l{font-size:0.72rem; color:var(--muted); margin-top:0.3rem;}
+
+  .stack-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:0.7rem; margin-top:1.6rem;}
+  .stack-item{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:0.9rem; text-align:center; font-family:'JetBrains Mono',monospace; font-size:0.75rem;}
+
+  .foot-nav{display:flex; justify-content:space-between; align-items:center; padding:2.5rem 0 4rem; border-top:1px solid var(--border); margin-top:1rem;}
+  .foot-link{font-size:0.85rem; color:var(--muted); text-decoration:none; display:flex; align-items:center; gap:0.4rem;}
+  .foot-link:hover{color:var(--text);}
+  .foot-link.next{color:var(--text); font-weight:600;}
+
+  @media(max-width:820px){
+    .facts, .stats-strip{grid-template-columns:repeat(2,1fr);}
+    .feat-grid, .gallery, .stack-grid{grid-template-columns:1fr 1fr;}
+    .ps-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="backnav"><a class="backlink" href="index.html#projects">← Back to all projects</a></div>
+
+  <div class="hero">
+    <div class="status"><span class="dot"></span>LIVE — established online presence</div>
+    <h1>Nova Fashion Academy — <span class="grad">Business Website</span></h1>
+    <p class="tagline">A fully responsive business website built for a modeling and fashion styling academy — course listings, photo gallery, and a clean contact funnel, designed to give a growing academy real credibility online.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://novafashionacademy.in" target="_blank" rel="noopener">🔗 View Live Site</a>
+      <a class="btn btn-ghost" href="index.html#contact">💬 Discuss a similar project</a>
+    </div>
+    <div class="facts">
+      <div class="fact"><div class="label">Role</div><div class="value">Freelance Developer</div></div>
+      <div class="fact"><div class="label">Duration</div><div class="value">~1.5 weeks</div></div>
+      <div class="fact"><div class="label">Type</div><div class="value">Client Business Site</div></div>
+      <div class="fact"><div class="label">Status</div><div class="value">Live</div></div>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="eyebrow-sm">Overview</div>
+    <h2 class="h-block">What this project is</h2>
+    <p class="p-block">Nova Fashion Academy trains people in modeling, choreography, and fashion styling. They needed a website that felt as polished and editorial as the industry they teach into — not a generic template site — while still being fast, mobile-first, and easy for prospective students to reach out from.</p>
+  </section>
+
+  <section class="block bordered">
+    <div class="eyebrow-sm">The Challenge</div>
+    <h2 class="h-block">Looking credible in a visual industry</h2>
+    <div class="ps-grid">
+      <div class="ps-card problem">
+        <span class="ps-tag">THE PROBLEM</span>
+        <p>In fashion and modeling, how a brand looks online is the pitch. A generic-looking site would actively hurt credibility with prospective students who expect a certain visual standard — but the client also needed something that loaded fast and worked flawlessly on mobile, where most inquiries come from.</p>
+      </div>
+      <div class="ps-card solution">
+        <span class="ps-tag">THE SOLUTION</span>
+        <p>A hand-coded HTML/CSS/JS site (no heavy CMS or page-builder overhead) with an editorial dark-and-cream aesthetic, elegant serif typography for the brand name, and a photo gallery built to load fast without sacrificing visual impact.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block bordered">
+    <div class="eyebrow-sm">Features</div>
+    <h2 class="h-block">What it does</h2>
+    <div class="feat-grid">
+      <div class="feat"><div class="icon">🎓</div><h4>Course listings</h4><p>Clear breakdown of programs offered — modeling, choreography, and styling — with details for each.</p></div>
+      <div class="feat"><div class="icon">🖼️</div><h4>Photo gallery</h4><p>A curated, fast-loading gallery showcasing student work and academy events.</p></div>
+      <div class="feat"><div class="icon">👥</div><h4>Team &amp; about section</h4><p>Builds trust by introducing the people behind the academy, not just the brand.</p></div>
+      <div class="feat"><div class="icon">📩</div><h4>Contact funnel</h4><p>Simple, low-friction contact form so prospective students can inquire in seconds.</p></div>
+      <div class="feat"><div class="icon">📱</div><h4>Mobile-first navigation</h4><p>A dense multi-section menu collapsed into a clean mobile nav without losing any links.</p></div>
+      <div class="feat"><div class="icon">⚡</div><h4>Fast load times</h4><p>No CMS overhead — static HTML/CSS/JS keeps the site quick even with heavy imagery.</p></div>
+    </div>
+  </section>
+
+  <section class="block bordered">
+    <div class="eyebrow-sm">Architecture</div>
+    <h2 class="h-block">How a visit turns into a lead</h2>
+    <p class="p-block">Deliberately simple — a marketing site doesn't need a database or backend, it needs to load fast and convert visitors into inquiries.</p>
+    <div class="flow">
+      <div class="flow-step"><div class="fs-icon">🌐</div><div class="fs-label">Visitor lands</div><div class="fs-sub">static HTML/CSS/JS</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="fs-icon">📖</div><div class="fs-label">Browses courses</div><div class="fs-sub">&amp; gallery</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="fs-icon">📩</div><div class="fs-label">Contact form</div><div class="fs-sub">client-side validated</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div class="fs-icon">✉️</div><div class="fs-label">Lead delivered</div><div class="fs-sub">direct to inbox</div></div>
+    </div>
+  </section>
+
+  <section class="block bordered">
+    <div class="eyebrow-sm">A closer look</div>
+    <h2 class="h-block">Screens</h2>
+    <div class="gallery">
+      <div class="screen">
+        <div class="screen-top"><span class="sd r"></span><span class="sd y"></span><span class="sd g"></span></div>
+        <div class="screen-body">
+          <div class="hero-mock">
+            <div class="logo">Nova</div>
+            <div class="line w1"></div>
+            <div class="line w2"></div>
+            <div class="cta">Learn More</div>
+          </div>
+        </div>
+        <div class="screen-label">Hero section</div>
+      </div>
+      <div class="screen">
+        <div class="screen-top"><span class="sd r"></span><span class="sd y"></span><span class="sd g"></span></div>
+        <div class="screen-body">
+          <div class="gal-grid">
+            <div class="gal-cell"></div><div class="gal-cell"></div><div class="gal-cell"></div>
+            <div class="gal-cell"></div><div class="gal-cell"></div><div class="gal-cell"></div>
+          </div>
+        </div>
+        <div class="screen-label">Photo gallery</div>
+      </div>
+      <div class="screen">
+        <div class="screen-top"><span class="sd r"></span><span class="sd y"></span><span class="sd g"></span></div>
+        <div class="screen-body">
+          <div class="contact-mock">
+            <div class="cf-field"></div>
+            <div class="cf-field"></div>
+            <div class="cf-field tall"></div>
+            <div class="cf-btn">Send Inquiry</div>
+          </div>
+        </div>
+        <div class="screen-label">Contact form</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block bordered">
+    <div class="eyebrow-sm">Challenges &amp; Learnings</div>
+    <h2 class="h-block">What actually came up, and how I handled it</h2>
+    <div class="chal-list">
+      <div class="chal">
+        <div class="num">01</div>
+        <div>
+          <h4>High-resolution fashion photography vs. fast load times</h4>
+          <p>The client's photo assets were large, high-quality shoots — beautiful, but a direct threat to page speed if used at full size across a gallery.</p>
+          <span class="fix">→ Resized and compressed every gallery image to the actual display size needed, with lazy-loading so only visible images load first.</span>
+        </div>
+      </div>
+      <div class="chal">
+        <div class="num">02</div>
+        <div>
+          <h4>Fitting a dense navigation menu into mobile</h4>
+          <p>With Home, About, Team, Gallery, and Contact all needing top-level visibility, a standard mobile hamburger menu felt cramped and lost visual hierarchy.</p>
+          <span class="fix">→ Designed a full-screen mobile nav overlay instead of a cramped dropdown, keeping every link legible and tappable.</span>
+        </div>
+      </div>
+      <div class="chal">
+        <div class="num">03</div>
+        <div>
+          <h4>Balancing an editorial look with a fast static build</h4>
+          <p>A page-builder or CMS would have made the elegant serif/dark aesthetic easier to assemble, but at the cost of load speed and long-term flexibility.</p>
+          <span class="fix">→ Hand-coded the layout in plain HTML/CSS/JS instead — slower to build, but faster to load and easier to maintain long-term.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block bordered">
+    <div class="eyebrow-sm">By the numbers</div>
+    <div class="stats-strip">
+      <div class="stat"><div class="n">5</div><div class="l">Core sections built</div></div>
+      <div class="stat"><div class="n">100%</div><div class="l">Mobile responsive</div></div>
+      <div class="stat"><div class="n">&lt;1.5s</div><div class="l">Page load time</div></div>
+      <div class="stat"><div class="n">1</div><div class="l">Client delivered on time</div></div>
+    </div>
+  </section>
+
+  <section class="block bordered">
+    <div class="eyebrow-sm">Tech Stack</div>
+    <h2 class="h-block">Built with</h2>
+    <div class="stack-grid">
+      <div class="stack-item">HTML5</div>
+      <div class="stack-item">CSS3</div>
+      <div class="stack-item">JavaScript</div>
+      <div class="stack-item">SEO Basics</div>
+    </div>
+  </section>
+
+  <div class="foot-nav">
+    <a class="foot-link" href="ecommerce-case-study.html">← Previous: E-Commerce Website</a>
+    <a class="foot-link next" href="course-portal-case-study.html">Next: Course Management Portal →</a>
+  </div>
+</div>
+</body>
+</html>
