@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
-    <loc>https://lokesh-dev.in/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <loc>https://www.lokesh-dev.in/</loc>
+    <lastmod>2026-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+
   <url>
-    <loc>https://lokesh-dev.in/course-portal-case-study.html</loc>
+    <loc>https://www.lokesh-dev.in/course-portal-case-study.html</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://lokesh-dev.in/ecommerce-case-study.html</loc>
+    <loc>https://www.lokesh-dev.in/ecommerce-case-study.html</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://lokesh-dev.in/nova-fashion-case-study.html</loc>
+    <loc>https://www.lokesh-dev.in/nova-fashion-case-study.html</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
 </urlset>
