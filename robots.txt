@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://lokesh-dev.in/sitemap.xml
+
+Sitemap: https://www.lokesh-dev.in/sitemap.xml
