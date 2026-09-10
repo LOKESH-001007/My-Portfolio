@@ -852,3 +852,17 @@ h1,h2,h3,h4,h5 { font-family: var(--font-display); letter-spacing: -0.02em; }
   .skills-3d-container { height:380px; }
   .scene-legend { display:none; }
 }
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
