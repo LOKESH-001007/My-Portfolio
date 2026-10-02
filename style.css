@@ -854,4 +854,37 @@ h1,h2,h3,h4,h5 { font-family: var(--font-display); letter-spacing: -0.02em; }
 }
 
 
+/* FIX: Make gallery photos visible on mobile */
+@media screen and (max-width: 768px) {
+    .gallery,
+    .gallery-grid,
+    .gallery-container,
+    .gallery-content,
+    .gallery-item,
+    .gallery-card,
+    .gallery img,
+    .gallery-grid img,
+    .gallery-container img,
+    .gallery-item img,
+    .gallery-card img {
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .gallery img,
+    .gallery-grid img,
+    .gallery-container img,
+    .gallery-item img,
+    .gallery-card img {
+        display: block !important;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
 
